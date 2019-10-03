@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 class Page(models.Model):
@@ -10,4 +11,8 @@ class Page(models.Model):
 	# def __init__(self, arg):
 	# 	super( Page, self).__init__()
 	# 	self.arg = arg
+
+	def get_absolute_url(self):
+		# return "detail/%s/" % self.id
+		return reverse("page-detail", kwargs={"page_id": self.id})
 		

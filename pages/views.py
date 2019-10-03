@@ -13,9 +13,3 @@ def page_detail(request, page_id):
 		"page": Page.objects.get(id=page_id),
 	}
 	return render(request, 'detail.html', context)
-
-def get_absolute_url(request, page_id):
-	context = {
-		
-	}
-	return render(request, 'detail.html', context)
